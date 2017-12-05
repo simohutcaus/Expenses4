@@ -14,159 +14,180 @@ const config = {
  
   const database = firebase.database();
 
+  
 
- database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
-
-
-database.ref('expenses').on('child_changed', (snapshot) => {
-
-  console.log(snapshot.key, snapshot.val());
-
-});
-
-
-database.ref('expenses').on('child_added', (snapshot) => {
-
-  console.log(snapshot.key, snapshot.val());
-
-});
+export { firebase, database as default };
 
 
 
-  // database.ref('expenses').on('value', (snapshot) => {
-  //   const expenses = [];
-  //   console.log(snapshot.val());
-  //   snapshot.forEach((childSnapshot) => {
 
-  //     expenses.push({
 
-  //       id: childSnapshot.key,
-  //       ...childSnapshot.val()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+
+
+// database.ref('expenses').on('child_changed', (snapshot) => {
+
+//   console.log(snapshot.key, snapshot.val());
+
+// });
+
+
+// database.ref('expenses').on('child_added', (snapshot) => {
+
+//   console.log(snapshot.key, snapshot.val());
+
+// });
+
+
+
+//   // database.ref('expenses').on('value', (snapshot) => {
+//   //   const expenses = [];
+//   //   console.log(snapshot.val());
+//   //   snapshot.forEach((childSnapshot) => {
+
+//   //     expenses.push({
+
+//   //       id: childSnapshot.key,
+//   //       ...childSnapshot.val()
 
         
 
-  //     });
+//   //     });
 
-  //   });
+//   //   });
 
-  //   console.log(expenses);
-  // });
-
-
-  // database.ref('expenses').push({
-
-  //   description: 'Rent',
-  //   note: '',
-  //   amount: 109500,
-  //   createdAt: 94844985943935
-
-  // });
+//   //   console.log(expenses);
+//   // });
 
 
+//   // database.ref('expenses').push({
+
+//   //   description: 'Rent',
+//   //   note: '',
+//   //   amount: 109500,
+//   //   createdAt: 94844985943935
+
+//   // });
 
 
-  // const firebaseNotes = {
-  //   notes: {
+
+
+//   // const firebaseNotes = {
+//   //   notes: {
       
-  //   }
-  // }
+//   //   }
+//   // }
 
-  // const notes = [{
-  //   id: '12',
-  //   title: 'first note',
-  //   body: 'testing this out'
-  // }, {
+//   // const notes = [{
+//   //   id: '12',
+//   //   title: 'first note',
+//   //   body: 'testing this out'
+//   // }, {
 
-  //   id: '712',
-  //   title: 'second note',
-  //   body: 'testing this out'
-  // }
+//   //   id: '712',
+//   //   title: 'second note',
+//   //   body: 'testing this out'
+//   // }
   
-  // ];
+//   // ];
 
-  // database.ref('notes').set(notes);
-  // console.log(notes);
-
-
-//   database.ref().on('value', (snapshot) => {
-
-//     console.log(snapshot.val());
-
-//   });
-
-// setTimeout (() => {
-//   database.ref('age').set(28);
-// }, 3500);
-
-// setTimeout (() => {
-//   database.ref('age').set(28);
-// }, 7000);
-
-// setTimeout (() => {
-//   database.ref('age').set(28);
-// }, 10500);
+//   // database.ref('notes').set(notes);
+//   // console.log(notes);
 
 
+// //   database.ref().on('value', (snapshot) => {
 
-  // database.ref('')
-  // .once('value')
-  // .then ((snapshot)=> {
-  //   const val = snapshot.val();
-  //   console.log(val);
+// //     console.log(snapshot.val());
 
-  // }).catch((e)=> {
+// //   });
 
-  //   console.log('error', e);
+// // setTimeout (() => {
+// //   database.ref('age').set(28);
+// // }, 3500);
 
-  // });
+// // setTimeout (() => {
+// //   database.ref('age').set(28);
+// // }, 7000);
+
+// // setTimeout (() => {
+// //   database.ref('age').set(28);
+// // }, 10500);
 
 
 
-// //database.child('isSingle').remove();
+//   // database.ref('')
+//   // .once('value')
+//   // .then ((snapshot)=> {
+//   //   const val = snapshot.val();
+//   //   console.log(val);
 
-// database.ref('isSingle')
-// .remove()
-// .then (() => {
+//   // }).catch((e)=> {
 
-// console.log('data removed');
+//   //   console.log('error', e);
 
-// }).catch((e) => {
-
-// console.log('error occured', e);
-
-// });
-
-// database.ref().update({
-
-//   name: 'Darren S',
-//   age: 34,
-//   job: 'Contracts Admin',
-//   isSingle: null
-
-// });
+//   // });
 
 
 
+// // //database.child('isSingle').remove();
 
-//   database.ref().set({
+// // database.ref('isSingle')
+// // .remove()
+// // .then (() => {
 
-//         name: 'Simon H',
-//         age: 35,
-//         isSingle: false,
-//         location: {
-//             city: 'Sydney',
-//             country: 'AU'
-//         }
+// // console.log('data removed');
 
-//   }).then(() => {
+// // }).catch((e) => {
+
+// // console.log('error occured', e);
+
+// // });
+
+// // database.ref().update({
+
+// //   name: 'Darren S',
+// //   age: 34,
+// //   job: 'Contracts Admin',
+// //   isSingle: null
+
+// // });
+
+
+
+
+// //   database.ref().set({
+
+// //         name: 'Simon H',
+// //         age: 35,
+// //         isSingle: false,
+// //         location: {
+// //             city: 'Sydney',
+// //             country: 'AU'
+// //         }
+
+// //   }).then(() => {
   
-//     console.log('data is saved');
+// //     console.log('data is saved');
 
-// }).catch((e) => {
+// // }).catch((e) => {
 
-// console.log('this failed', e);
+// // console.log('this failed', e);
 
-// });
+// // });
 
